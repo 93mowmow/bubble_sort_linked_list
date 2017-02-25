@@ -242,8 +242,6 @@ void Bubble_sort(Node **HeadPtr,int no_of_nodes)
 	Node *parent;
 	Node *Current;
 	Node *swap_node;
-    
-	Current = *HeadPtr;
 	
 	if(no_of_nodes <= 1)
 		return;
@@ -273,6 +271,10 @@ void Bubble_sort(Node **HeadPtr,int no_of_nodes)
 			parent = Current;
 			Current = Current->next;
 			
+			// Tail case. 
+			// If the Current node swapped with the swap_node, 
+			// and then Current = Current->next, 
+			// finally Current becomes NULL
 			if(Current == NULL)
 				break;
 			
